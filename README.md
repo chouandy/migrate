@@ -1,10 +1,10 @@
 [![Build Status](https://img.shields.io/travis/golang-migrate/migrate/master.svg)](https://travis-ci.org/golang-migrate/migrate)
-[![GoDoc](https://godoc.org/github.com/golang-migrate/migrate?status.svg)](https://godoc.org/github.com/golang-migrate/migrate)
+[![GoDoc](https://godoc.org/github.com/chouandy/migrate?status.svg)](https://godoc.org/github.com/chouandy/migrate)
 [![Coverage Status](https://img.shields.io/coveralls/github/golang-migrate/migrate/master.svg)](https://coveralls.io/github/golang-migrate/migrate?branch=master)
 [![packagecloud.io](https://img.shields.io/badge/deb-packagecloud.io-844fec.svg)](https://packagecloud.io/golang-migrate/migrate?filter=debs)
 [![Docker Pulls](https://img.shields.io/docker/pulls/migrate/migrate.svg)](https://hub.docker.com/r/migrate/migrate/)
 ![Supported Go Versions](https://img.shields.io/badge/Go-1.10%2C%201.11-lightgrey.svg)
-[![GitHub Release](https://img.shields.io/github/release/golang-migrate/migrate.svg)](https://github.com/golang-migrate/migrate/releases)
+[![GitHub Release](https://img.shields.io/github/release/golang-migrate/migrate.svg)](https://github.com/chouandy/migrate/releases)
 
 
 # migrate
@@ -18,7 +18,7 @@ __Database migrations written in Go. Use as [CLI](#cli-usage) or import as [libr
  * Database drivers don't assume things or try to correct user input. When in doubt, fail.
 
 
-Looking for [v1](https://github.com/golang-migrate/migrate/tree/v1)?
+Looking for [v1](https://github.com/chouandy/migrate/tree/v1)?
 
 Forked from [mattes/migrate](https://github.com/mattes/migrate)
 
@@ -90,7 +90,7 @@ $ migrate -source file://path/to/migrations -database postgres://localhost:5432/
 ### Docker usage
 
 ```
-$ docker run -v {{ migration dir }}:/migrations --network host migrate/migrate 
+$ docker run -v {{ migration dir }}:/migrations --network host migrate/migrate
     -path=/migrations/ -database postgres://localhost:5432/database up 2
 ```
 
@@ -103,13 +103,13 @@ $ docker run -v {{ migration dir }}:/migrations --network host migrate/migrate
  * Uses `io.Reader` streams internally for low memory overhead.
  * Thread-safe and no goroutine leaks.
 
-__[Go Documentation](https://godoc.org/github.com/golang-migrate/migrate)__
+__[Go Documentation](https://godoc.org/github.com/chouandy/migrate)__
 
 ```go
 import (
-    "github.com/golang-migrate/migrate"
-    _ "github.com/golang-migrate/migrate/database/postgres"
-    _ "github.com/golang-migrate/migrate/source/github"
+    "github.com/chouandy/migrate"
+    _ "github.com/chouandy/migrate/database/postgres"
+    _ "github.com/chouandy/migrate/source/github"
 )
 
 func main() {
@@ -126,9 +126,9 @@ Want to use an existing database client?
 import (
     "database/sql"
     _ "github.com/lib/pq"
-    "github.com/golang-migrate/migrate"
-    "github.com/golang-migrate/migrate/database/postgres"
-    _ "github.com/golang-migrate/migrate/source/file"
+    "github.com/chouandy/migrate"
+    "github.com/chouandy/migrate/database/postgres"
+    _ "github.com/chouandy/migrate/source/file"
 )
 
 func main() {

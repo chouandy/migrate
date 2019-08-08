@@ -5,7 +5,7 @@ RUN apk add --no-cache git gcc musl-dev curl
 
 RUN curl -fsSL -o /usr/local/bin/dep https://github.com/golang/dep/releases/download/v0.4.1/dep-linux-amd64 && chmod +x /usr/local/bin/dep
 
-WORKDIR /go/src/github.com/golang-migrate/migrate
+WORKDIR /go/src/github.com/chouandy/migrate
 
 COPY Gopkg.toml Gopkg.lock ./
 RUN dep ensure -vendor-only
@@ -24,7 +24,7 @@ FROM alpine:3.8
 
 RUN apk add --no-cache ca-certificates
 
-COPY --from=downloader /go/src/github.com/golang-migrate/migrate/build/migrate.linux-386 /migrate
+COPY --from=downloader /go/src/github.com/chouandy/migrate/build/migrate.linux-386 /migrate
 
 ENTRYPOINT ["/migrate"]
 CMD ["--help"]

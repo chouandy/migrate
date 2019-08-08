@@ -10,9 +10,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/golang-migrate/migrate"
-	"github.com/golang-migrate/migrate/database"
-	"github.com/golang-migrate/migrate/source"
+	"github.com/chouandy/migrate"
+	"github.com/chouandy/migrate/database"
+	"github.com/chouandy/migrate/source"
 )
 
 const defaultTimeFormat = "20060102150405"
@@ -37,7 +37,7 @@ func main() {
 
 Options:
   -source          Location of the migrations (driver://url)
-  -path            Shorthand for -source=file://path 
+  -path            Shorthand for -source=file://path
   -database        Run migrations against this database (driver://url)
   -prefetch N      Number of migrations to load in advance before executing (default 10)
   -lock-timeout N  Allow N seconds to acquire database lock (default 15)

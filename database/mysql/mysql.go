@@ -20,8 +20,8 @@ import (
 )
 
 import (
-	"github.com/golang-migrate/migrate"
-	"github.com/golang-migrate/migrate/database"
+	"github.com/chouandy/migrate"
+	"github.com/chouandy/migrate/database"
 )
 
 func init() {

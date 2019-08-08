@@ -2,13 +2,13 @@
 
   1. Make sure you have a running Docker daemon
      (Install for [MacOS](https://docs.docker.com/docker-for-mac/))
-  1. Fork this repo and `git clone` somewhere to `$GOPATH/src/github.com/golang-migrate/migrate`
+  1. Fork this repo and `git clone` somewhere to `$GOPATH/src/github.com/chouandy/migrate`
   1. Install [dep](https://github.com/golang/dep) and run `dep ensure` to pull dependencies
   1. Confirm tests are working: `make test-short`
   1. Write awesome code ...
   1. `make test` to run all tests against all database versions
   1. Push code and open Pull Request
- 
+
 Some more helpful commands:
 
   * You can specify which database/ source tests to run:

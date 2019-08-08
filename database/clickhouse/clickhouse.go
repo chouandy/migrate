@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/golang-migrate/migrate"
-	"github.com/golang-migrate/migrate/database"
+	"github.com/chouandy/migrate"
+	"github.com/chouandy/migrate/database"
 )
 
 var DefaultMigrationsTable = "schema_migrations"
@@ -175,7 +175,7 @@ func (ch *ClickHouse) ensureVersionTable() error {
 	// if not, create the empty migration table
 	query = `
 		CREATE TABLE ` + ch.config.MigrationsTable + ` (
-			version    UInt32, 
+			version    UInt32,
 			dirty      UInt8,
 			sequence   UInt64
 		) Engine=TinyLog
